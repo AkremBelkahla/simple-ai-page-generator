@@ -1,4 +1,5 @@
 # Simple AI Page Generator
+
 ## Description
 Un plugin WordPress avancé pour générer du contenu via différentes API d'IA (OpenAI, DeepSeek, Gemini)
 
@@ -18,3 +19,6 @@ Un plugin WordPress avancé pour générer du contenu via différentes API d'IA 
 
 ## Auteur
 [Votre Nom](https://votresite.com)
+
+## Dépôt GitHub
+https://github.com/AkremBelkahla/simple-ai-page-generator
