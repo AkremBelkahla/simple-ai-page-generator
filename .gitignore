@@ -1,0 +1,13 @@
+# Ignorer les fichiers de configuration sensibles
+includes/api/api-settings.php
+
+# Ignorer les répertoires de cache et de logs
+assets/css/
+assets/js/
+
+# Ignorer les fichiers générés
+*.log
+*.cache
+
+# Historique
+.history
