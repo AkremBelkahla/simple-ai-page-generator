@@ -321,7 +321,7 @@ GPL v2 or later - see [LICENSE](LICENSE)
 
 **Akrem Belkahla**
 - 🌐 Website: [infinityweb.tn](https://infinityweb.tn)
-- 📧 Email: akrem.belkahla@infinityweb.tn
+- 📧 Email: contact@infinityweb.tn
 - 💻 GitHub: [@AkremBelkahla](https://github.com/AkremBelkahla)
 
 ## 🙏 Acknowledgments
