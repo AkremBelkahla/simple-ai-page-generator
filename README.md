@@ -1,113 +1,118 @@
-# Simple AI Page Generator
+# 🤖 Simple AI Page Generator
 
-Plugin WordPress professionnel pour générer du contenu de qualité en utilisant diverses API d'intelligence artificielle (OpenAI, DeepSeek, Google Gemini, Claude).
+A professional WordPress plugin to generate high-quality content using various AI APIs (OpenAI, DeepSeek, Google Gemini, Claude).
 
-## Fonctionnalités
+[![WordPress](https://img.shields.io/badge/WordPress-5.8%2B-blue.svg)](https://wordpress.org/)
+[![PHP](https://img.shields.io/badge/PHP-7.4%2B-purple.svg)](https://php.net/)
+[![Version](https://img.shields.io/badge/version-2.0.0-green.svg)](https://github.com/AkremBelkahla/simple-ai-page-generator)
+[![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg)](LICENSE)
 
-### Génération de Contenu
-- **Multi-API** : Support de OpenAI, DeepSeek, Google Gemini et Claude (Anthropic)
-- **Personnalisable** : Choix du nombre de mots (100 à 2000)
-- **Flexible** : Génération de posts ou de pages
-- **Intelligent** : Contenu structuré avec HTML sémantique
+## ✨ Features
 
-### Sécurité
-- Validation stricte des entrées/sorties
-- Sanitization complète des données
-- Protection CSRF avec nonces
-- Vérification des permissions utilisateur
-- Chiffrement des clés API (optionnel)
+### 🎨 Content Generation
+- **Multi-API Support** 🌐 : OpenAI, DeepSeek, Google Gemini, and Claude (Anthropic)
+- **Customizable** ⚙️ : Choose word count (100 to 2000 words)
+- **Flexible** 📝 : Generate posts or pages
+- **Smart** 🧠 : Structured content with semantic HTML
 
-### Performance
-- Système de cache intégré
-- Optimisation des requêtes API
-- Nettoyage automatique des logs
+### 🔒 Security
+- ✅ Strict input/output validation
+- ✅ Complete data sanitization
+- ✅ CSRF protection with nonces
+- ✅ User permission verification
+- ✅ Optional API key encryption
 
-### Administration
-- Interface moderne et intuitive
-- Statistiques détaillées
-- Historique des générations
-- Test de connexion API
-- Logs détaillés pour le debugging
+### ⚡ Performance
+- 🚀 Built-in caching system
+- 🎯 Optimized API requests
+- 🧹 Automatic log cleanup
 
-## Prérequis
+### 📊 Administration
+- 💎 Modern and intuitive interface
+- 📈 Detailed statistics
+- 📜 Generation history
+- 🔌 API connection testing
+- 🐛 Detailed logs for debugging
 
-- **WordPress** : 5.8 ou supérieur
-- **PHP** : 7.4 ou supérieur
-- **Permissions** : `manage_options` pour l'administration
-- **API Key** : Au moins une clé API d'un service supporté
+## 📋 Requirements
 
-## Installation
+- **WordPress** 🔵 : 5.8 or higher
+- **PHP** 🟣 : 7.4 or higher
+- **Permissions** 🔐 : `manage_options` for administration
+- **API Key** 🔑 : At least one API key from a supported service
 
-### Installation Standard
+## 🚀 Installation
 
-1. Télécharger le plugin depuis le dépôt
-2. Décompresser dans `/wp-content/plugins/`
-3. Activer depuis le menu "Extensions" de WordPress
-4. Configurer les clés API dans "AI Generator > Settings"
+### Standard Installation
 
-### Installation via WP-CLI
+1. 📥 Download the plugin from the repository
+2. 📂 Extract to `/wp-content/plugins/`
+3. ✅ Activate from WordPress "Plugins" menu
+4. ⚙️ Configure API keys in "AI Generator > Settings"
+
+### WP-CLI Installation
 
 ```bash
 wp plugin install simple-ai-page-generator --activate
 ```
 
-## Configuration
+## ⚙️ Configuration
 
-### 1. Configurer les Clés API
+### 1. Configure API Keys 🔑
 
-Accédez à **AI Generator > Settings** et ajoutez vos clés API :
+Go to **AI Generator > Settings** and add your API keys:
 
-- **OpenAI** : [Obtenir une clé](https://platform.openai.com/api-keys)
-- **DeepSeek** : [Obtenir une clé](https://platform.deepseek.com)
-- **Google Gemini** : [Obtenir une clé](https://ai.google.dev)
-- **Claude (Anthropic)** : [Obtenir une clé](https://console.anthropic.com)
+- **OpenAI** 🤖 : [Get a key](https://platform.openai.com/api-keys)
+- **DeepSeek** 🔍 : [Get a key](https://platform.deepseek.com)
+- **Google Gemini** 💎 : [Get a key](https://ai.google.dev)
+- **Claude (Anthropic)** 🎭 : [Get a key](https://console.anthropic.com)
 
-### 2. Paramètres par Défaut
+### 2. Default Settings 📝
 
-Configurez les paramètres par défaut :
-- Modèle IA préféré
-- Nombre de mots par défaut
-- Activation du cache
-- Niveau de logging
+Configure default settings:
+- 🎯 Preferred AI model
+- 📊 Default word count
+- 💾 Cache activation
+- 📋 Logging level
 
-## Utilisation
+## 📖 Usage
 
-### Génération Simple
+### Simple Generation ✨
 
-1. Accédez à **AI Generator** dans le menu admin
-2. Entrez un titre ou un sujet (optionnel)
-3. Sélectionnez le modèle IA
-4. Choisissez le nombre de mots
-5. Sélectionnez le type de contenu (Post/Page)
-6. Définissez le statut de publication
-7. Cliquez sur "Generate Content"
+1. 🎯 Go to **AI Generator** in the admin menu
+2. ✍️ Enter a title or topic (optional)
+3. 🤖 Select the AI model
+4. 📊 Choose word count
+5. 📝 Select content type (Post/Page)
+6. 🚦 Set publication status
+7. 🎬 Click "Generate Content"
 
-### Via Code
+### Via Code 💻
 
 ```php
-// Obtenir l'instance du plugin
+// Get plugin instance
 $plugin = \Simple_AI_Page_Generator\Plugin::get_instance();
 $generator = $plugin->get_content_generator();
 
-// Générer et créer un post
+// Generate and create a post
 $post_id = $generator->generate_and_create_post(
-    'Mon Titre',      // Titre
-    'openai',         // Modèle
-    500,              // Nombre de mots
-    'post',           // Type de contenu
-    'draft'           // Statut
+    'My Title',       // Title
+    'openai',         // Model
+    500,              // Word count
+    'post',           // Content type
+    'draft'           // Status
 );
 
 if (is_wp_error($post_id)) {
     echo $post_id->get_error_message();
 } else {
-    echo "Post créé avec l'ID : " . $post_id;
+    echo "Post created with ID: " . $post_id;
 }
 ```
 
-## Architecture
+## 🏗️ Architecture
 
-### Structure des Fichiers
+### File Structure 📁
 
 ```
 simple-ai-page-generator/
@@ -140,18 +145,18 @@ simple-ai-page-generator/
 └── uninstall.php
 ```
 
-### Principes de Conception
+### Design Principles 🎯
 
-- **PSR-4 Autoloading** : Chargement automatique des classes
-- **Namespaces** : Organisation modulaire du code
-- **Singleton Pattern** : Instance unique du plugin
-- **Dependency Injection** : Injection des dépendances
-- **Separation of Concerns** : Séparation des responsabilités
-- **WordPress Coding Standards** : Respect des standards WordPress
+- **PSR-4 Autoloading** 🔄 : Automatic class loading
+- **Namespaces** 📦 : Modular code organization
+- **Singleton Pattern** 🎭 : Single plugin instance
+- **Dependency Injection** 💉 : Dependency injection
+- **Separation of Concerns** 🎨 : Responsibility separation
+- **WordPress Coding Standards** ✅ : WordPress standards compliance
 
-## Hooks & Filtres
+## 🔌 Hooks & Filters
 
-### Actions
+### Actions 🎬
 
 ```php
 // Après l'initialisation du plugin
@@ -164,7 +169,7 @@ do_action('sapg_content_generated', $post_id, $model, $word_count);
 do_action('sapg_log', $level, $message, $context);
 ```
 
-### Filtres
+### Filters 🎛️
 
 ```php
 // Modifier la capacité requise
@@ -195,11 +200,11 @@ add_filter('sapg_sanitize_options', function($sanitized, $input) {
 }, 10, 2);
 ```
 
-## Logs et Debugging
+## 📊 Logs and Debugging
 
-### Activer les Logs
+### Enable Logs 🐛
 
-Les logs sont stockés dans `/wp-uploads/sapg-logs/` et sont automatiquement nettoyés après 30 jours.
+Logs are stored in `/wp-uploads/sapg-logs/` and automatically cleaned after 30 days.
 
 ```php
 // Dans wp-config.php
@@ -207,111 +212,106 @@ define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 ```
 
-### Niveaux de Log
+### Log Levels 📋
 
-- **emergency** : Système inutilisable
-- **alert** : Action immédiate requise
-- **critical** : Conditions critiques
-- **error** : Erreurs d'exécution
-- **warning** : Avertissements
-- **notice** : Événements normaux mais significatifs
-- **info** : Messages informatifs
-- **debug** : Informations de débogage
+- **emergency** 🚨 : System unusable
+- **alert** ⚠️ : Immediate action required
+- **critical** 🔴 : Critical conditions
+- **error** ❌ : Runtime errors
+- **warning** ⚡ : Warnings
+- **notice** 📢 : Normal but significant events
+- **info** ℹ️ : Informational messages
+- **debug** 🐛 : Debug information
 
-## Tests
+## 🧪 Testing
 
-### Tests Manuels
+### Manual Tests ✅
 
-1. Tester chaque API avec le bouton "Test Connection"
-2. Générer du contenu avec différents paramètres
-3. Vérifier les logs pour les erreurs
-4. Consulter les statistiques
+1. 🔌 Test each API with "Test Connection" button
+2. 📝 Generate content with different parameters
+3. 📋 Check logs for errors
+4. 📊 Review statistics
 
-### Tests Unitaires (À venir)
+### Unit Tests 🔬 (Coming Soon)
 
 ```bash
 composer install
 vendor/bin/phpunit
 ```
 
-## Sécurité
+## 🔒 Security
 
-### Bonnes Pratiques Implémentées
+### Implemented Best Practices ✅
 
-- Validation stricte des entrées
-- Sanitization des sorties
-- Vérification des nonces
-- Contrôle des permissions
-- Échappement des données
-- Préparation des requêtes SQL
-- Protection contre les injections
-- Logs sécurisés (.htaccess)
+- ✅ Strict input validation
+- ✅ Output sanitization
+- ✅ Nonce verification
+- ✅ Permission control
+- ✅ Data escaping
+- ✅ SQL query preparation
+- ✅ Injection protection
+- ✅ Secured logs (.htaccess)
 
-### Signaler une Vulnérabilité
+### Report a Vulnerability 🚨
 
-Envoyez un email à : security@infinityweb.tn
+Send an email to: security@infinityweb.tn
 
-## Changelog
+## 📝 Changelog
 
-### Version 2.0.0 (2025-01-21)
+See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
-**Refactorisation Majeure**
+### Version 2.0.0 (2025-01-21) 🎉
 
-- Architecture modulaire avec autoloader PSR-4
-- Système de logging robuste
-- Validation et sanitization strictes
-- Configuration centralisée
-- Documentation PHPDoc complète
-- Interface admin modernisée
-- Statistiques détaillées
-- Support de Claude (Anthropic)
-- Sécurité renforcée
-- Performance optimisée
-- Corrections de bugs
+**Major Refactoring**
 
-### Version 1.1.0
+- ✨ Modular architecture with PSR-4 autoloader
+- 📋 Robust logging system
+- 🔒 Strict validation and sanitization
+- ⚙️ Centralized configuration
+- 📚 Complete PHPDoc documentation
+- 💎 Modernized admin interface
+- 📊 Detailed statistics
+- 🤖 Claude (Anthropic) support
+- 🔐 Enhanced security
+- ⚡ Optimized performance
+- 🐛 Bug fixes
 
-- Support de plusieurs APIs
-- Interface admin améliorée
+## 🤝 Contributing
 
-### Version 1.0.0
+Contributions are welcome! 🎉
 
-- Version initiale
+1. 🍴 Fork the project
+2. 🌿 Create a branch (`git checkout -b feature/AmazingFeature`)
+3. 💾 Commit your changes (`git commit -m 'Add AmazingFeature'`)
+4. 📤 Push to the branch (`git push origin feature/AmazingFeature`)
+5. 🔀 Open a Pull Request
 
-## Contribution
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
-Les contributions sont les bienvenues !
+## 📄 License
 
-1. Fork le projet
-2. Créer une branche (`git checkout -b feature/AmazingFeature`)
-3. Commit les changements (`git commit -m 'Add AmazingFeature'`)
-4. Push vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrir une Pull Request
+GPL v2 or later - see [LICENSE](LICENSE)
 
-## Licence
-
-GPL v2 ou supérieur - voir [LICENSE](LICENSE)
-
-## Auteur
+## 👨‍💻 Author
 
 **Akrem Belkahla**
-- Website: [infinityweb.tn](https://infinityweb.tn)
-- Email: akrem.belkahla@infinityweb.tn
-- GitHub: [@AkremBelkahla](https://github.com/AkremBelkahla)
+- 🌐 Website: [infinityweb.tn](https://infinityweb.tn)
+- 📧 Email: akrem.belkahla@infinityweb.tn
+- 💻 GitHub: [@AkremBelkahla](https://github.com/AkremBelkahla)
 
-## Remerciements
+## 🙏 Acknowledgments
 
-- OpenAI pour GPT
-- DeepSeek pour leur API
-- Google pour Gemini
-- Anthropic pour Claude
-- La communauté WordPress
+- 🤖 OpenAI for GPT
+- 🔍 DeepSeek for their API
+- 💎 Google for Gemini
+- 🎭 Anthropic for Claude
+- 🌍 WordPress community
 
-## Support
+## 📞 Support
 
-- **Documentation** : [infinityweb.tn/docs/sapg](https://infinityweb.tn/docs/sapg)
-- **Issues** : [GitHub Issues](https://github.com/AkremBelkahla/simple-ai-page-generator/issues)
-- **Email** : support@infinityweb.tn
+- 📚 **Documentation**: [infinityweb.tn/docs/sapg](https://infinityweb.tn/docs/sapg)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/AkremBelkahla/simple-ai-page-generator/issues)
+- 📧 **Email**: support@infinityweb.tn
 
 ---
 

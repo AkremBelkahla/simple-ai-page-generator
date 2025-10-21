@@ -1,0 +1,84 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Get version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+      
+      - name: Extract changelog
+        id: changelog
+        run: |
+          VERSION=${{ steps.get_version.outputs.VERSION }}
+          CHANGELOG=$(sed -n "/## \[$VERSION\]/,/## \[/p" CHANGELOG.md | sed '1d;$d')
+          echo "CHANGELOG<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGELOG" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+      
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Version ${{ steps.get_version.outputs.VERSION }}
+          body: |
+            ## 🚀 What's New
+            
+            ${{ steps.changelog.outputs.CHANGELOG }}
+            
+            ## 📥 Installation
+            
+            1. Download the plugin zip file
+            2. Upload to WordPress via Plugins > Add New > Upload
+            3. Activate the plugin
+            4. Configure your API keys in AI Generator > Settings
+            
+            ## 📚 Documentation
+            
+            - [README](https://github.com/${{ github.repository }}/blob/main/README.md)
+            - [Changelog](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md)
+            - [Documentation](https://infinityweb.tn/docs/sapg)
+            
+            ---
+            
+            Made with ❤️ by [Infinity Web](https://infinityweb.tn)
+          draft: false
+          prerelease: false
+      
+      - name: Create plugin zip
+        run: |
+          mkdir -p dist
+          zip -r dist/simple-ai-page-generator-${{ steps.get_version.outputs.VERSION }}.zip . \
+            -x "*.git*" \
+            -x "node_modules/*" \
+            -x "bin/*" \
+            -x ".github/*" \
+            -x "tests/*" \
+            -x "*.md" \
+            -x "composer.*" \
+            -x "package*.json"
+      
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dist/simple-ai-page-generator-${{ steps.get_version.outputs.VERSION }}.zip
+          asset_name: simple-ai-page-generator-${{ steps.get_version.outputs.VERSION }}.zip
+          asset_content_type: application/zip
