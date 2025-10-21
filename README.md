@@ -46,6 +46,17 @@ A professional WordPress plugin to generate high-quality content using AI. Curre
 - **Permissions** 🔐 : `manage_options` for administration
 - **API Key** 🔑 : At least one API key from a supported service
 
+## 🌍 Languages
+
+The plugin automatically adapts to your WordPress language:
+
+- **🇬🇧 English** - Default language
+- **🇫🇷 Français** - Full French translation available
+
+**How it works**: If WordPress is set to French, the plugin interface will be in French. Otherwise, it defaults to English.
+
+See [TRANSLATION.md](TRANSLATION.md) for more details on translations.
+
 ## 🚀 Installation
 
 ### Standard Installation

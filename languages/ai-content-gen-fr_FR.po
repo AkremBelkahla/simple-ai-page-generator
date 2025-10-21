@@ -1,0 +1,265 @@
+# Translation file for Simple AI Page Generator
+# Copyright (C) 2025 Akrem Belkahla
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple AI Page Generator 2.0.0\n"
+"Report-Msgid-Bugs-To: support@infinityweb.tn\n"
+"POT-Creation-Date: 2025-01-21 12:00+0000\n"
+"PO-Revision-Date: 2025-01-21 12:00+0000\n"
+"Last-Translator: Akrem Belkahla <contact@infinityweb.tn>\n"
+"Language-Team: French\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.0\n"
+
+#: includes/class-plugin.php
+msgid "Simple AI Page Generator requires PHP %s or higher. You are running PHP %s."
+msgstr "Simple AI Page Generator nécessite PHP %s ou supérieur. Vous utilisez PHP %s."
+
+msgid "Simple AI Page Generator requires WordPress %s or higher."
+msgstr "Simple AI Page Generator nécessite WordPress %s ou supérieur."
+
+msgid "Settings"
+msgstr "Paramètres"
+
+msgid "Security check failed"
+msgstr "Vérification de sécurité échouée"
+
+msgid "Insufficient permissions"
+msgstr "Permissions insuffisantes"
+
+msgid "Invalid parameters"
+msgstr "Paramètres invalides"
+
+msgid "API connection successful"
+msgstr "Connexion API réussie"
+
+#: includes/admin/class-admin-controller.php
+msgid "AI Content Generator"
+msgstr "Générateur de Contenu IA"
+
+msgid "AI Generator"
+msgstr "Générateur IA"
+
+msgid "Statistics"
+msgstr "Statistiques"
+
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Vous n'avez pas les permissions nécessaires pour accéder à cette page."
+
+msgid "API Configuration"
+msgstr "Configuration API"
+
+msgid "Configure your API keys for different AI services. At least one API key is required."
+msgstr "Configurez vos clés API pour les différents services IA. Au moins une clé API est requise."
+
+msgid "General Settings"
+msgstr "Paramètres Généraux"
+
+msgid "Configure default settings for content generation."
+msgstr "Configurez les paramètres par défaut pour la génération de contenu."
+
+msgid "API Key"
+msgstr "Clé API"
+
+msgid "Show/Hide"
+msgstr "Afficher/Masquer"
+
+msgid "Test Connection"
+msgstr "Tester la Connexion"
+
+msgid "Get your %s API key"
+msgstr "Obtenir votre clé API %s"
+
+msgid "Default AI Model"
+msgstr "Modèle IA par Défaut"
+
+msgid "Select the default AI model for content generation."
+msgstr "Sélectionnez le modèle IA par défaut pour la génération de contenu."
+
+msgid "Not configured"
+msgstr "Non configuré"
+
+msgid "Default Word Count"
+msgstr "Nombre de Mots par Défaut"
+
+msgid "Default word count for generated content."
+msgstr "Nombre de mots par défaut pour le contenu généré."
+
+msgid "words"
+msgstr "mots"
+
+msgid "Enable Caching"
+msgstr "Activer le Cache"
+
+msgid "Cache API responses to improve performance and reduce costs"
+msgstr "Mettre en cache les réponses API pour améliorer les performances et réduire les coûts"
+
+msgid "Enable Logging"
+msgstr "Activer les Logs"
+
+msgid "Enable detailed logging for debugging"
+msgstr "Activer les logs détaillés pour le débogage"
+
+#: templates/admin/main-page.php
+msgid "Generate New Content"
+msgstr "Générer un Nouveau Contenu"
+
+msgid "No API keys configured. Please configure at least one API key in the settings."
+msgstr "Aucune clé API configurée. Veuillez configurer au moins une clé API dans les paramètres."
+
+msgid "Configure APIs"
+msgstr "Configurer les APIs"
+
+msgid "Content Title"
+msgstr "Titre du Contenu"
+
+msgid "Enter a topic or leave empty for random content"
+msgstr "Entrez un sujet ou laissez vide pour un contenu aléatoire"
+
+msgid "The main topic or title for your content."
+msgstr "Le sujet principal ou titre de votre contenu."
+
+msgid "AI Model"
+msgstr "Modèle IA"
+
+msgid "Select the AI model to use for generation."
+msgstr "Sélectionnez le modèle IA à utiliser pour la génération."
+
+msgid "Word Count"
+msgstr "Nombre de Mots"
+
+msgid "Approximate number of words to generate."
+msgstr "Nombre approximatif de mots à générer."
+
+msgid "Content Type"
+msgstr "Type de Contenu"
+
+msgid "Post"
+msgstr "Article"
+
+msgid "Page"
+msgstr "Page"
+
+msgid "Type of content to create."
+msgstr "Type de contenu à créer."
+
+msgid "Post Status"
+msgstr "Statut de Publication"
+
+msgid "Draft"
+msgstr "Brouillon"
+
+msgid "Published"
+msgstr "Publié"
+
+msgid "Pending Review"
+msgstr "En Attente de Révision"
+
+msgid "Status for the generated content."
+msgstr "Statut pour le contenu généré."
+
+msgid "Generate Content"
+msgstr "Générer le Contenu"
+
+msgid "Quick Tips"
+msgstr "Conseils Rapides"
+
+msgid "Be specific with your title for better results"
+msgstr "Soyez précis avec votre titre pour de meilleurs résultats"
+
+msgid "Review and edit generated content before publishing"
+msgstr "Révisez et éditez le contenu généré avant de publier"
+
+msgid "Different AI models may produce different styles"
+msgstr "Différents modèles IA peuvent produire différents styles"
+
+msgid "Longer content takes more time to generate"
+msgstr "Un contenu plus long prend plus de temps à générer"
+
+msgid "Recent Generations"
+msgstr "Générations Récentes"
+
+msgid "ago"
+msgstr "il y a"
+
+msgid "No content generated yet."
+msgstr "Aucun contenu généré pour le moment."
+
+#: templates/admin/statistics-page.php
+msgid "AI Content Generator - Statistics"
+msgstr "Générateur de Contenu IA - Statistiques"
+
+msgid "Total Generated"
+msgstr "Total Généré"
+
+msgid "Posts"
+msgstr "Articles"
+
+msgid "Pages"
+msgstr "Pages"
+
+msgid "Usage by AI Model"
+msgstr "Utilisation par Modèle IA"
+
+msgid "Content Generated"
+msgstr "Contenu Généré"
+
+msgid "Percentage"
+msgstr "Pourcentage"
+
+msgid "No statistics available yet. Start generating content!"
+msgstr "Aucune statistique disponible pour le moment. Commencez à générer du contenu !"
+
+#: includes/generator/class-content-generator.php
+msgid "API key for %s is not configured"
+msgstr "La clé API pour %s n'est pas configurée"
+
+msgid "Model %s is not supported"
+msgstr "Le modèle %s n'est pas supporté"
+
+msgid "blog post"
+msgstr "article de blog"
+
+msgid "page"
+msgstr "page"
+
+msgid "Write a comprehensive %s of approximately %d words"
+msgstr "Rédigez un(e) %s complet(e) d'environ %d mots"
+
+msgid " about: %s"
+msgstr " sur : %s"
+
+msgid "Structure the content with proper HTML formatting including headings (h2, h3), paragraphs, lists, and emphasis where appropriate. Make it engaging, informative, and SEO-friendly."
+msgstr "Structurez le contenu avec un formatage HTML approprié incluant des titres (h2, h3), des paragraphes, des listes et des emphases si nécessaire. Rendez-le engageant, informatif et optimisé pour le SEO."
+
+msgid "Generated Content - %s"
+msgstr "Contenu Généré - %s"
+
+#: includes/api/class-openai-client.php
+msgid "Invalid OpenAI API key"
+msgstr "Clé API OpenAI invalide"
+
+msgid "Invalid response from OpenAI API"
+msgstr "Réponse invalide de l'API OpenAI"
+
+msgid "OpenAI API test failed"
+msgstr "Test de l'API OpenAI échoué"
+
+#: includes/core/class-validator.php
+msgid "You do not have the necessary permissions to access this page."
+msgstr "Vous n'avez pas les permissions nécessaires pour accéder à cette page."
+
+#: assets/js/admin-script.js
+msgid "Generating content..."
+msgstr "Génération du contenu..."
+
+msgid "Content generated successfully!"
+msgstr "Contenu généré avec succès !"
+
+msgid "An error occurred. Please try again."
+msgstr "Une erreur s'est produite. Veuillez réessayer."

@@ -1,13 +1,35 @@
-# Ignorer les fichiers de configuration sensibles
+# Sensitive configuration files
 includes/api/api-settings.php
 
-# Ignorer les répertoires de cache et de logs
+# Cache and logs directories
 assets/css/
 assets/js/
 
-# Ignorer les fichiers générés
+# Generated files
 *.log
 *.cache
 
-# Historique
+# Compiled translation files (should be generated locally)
+languages/*.mo
+
+# History
 .history
+
+# Node modules
+node_modules/
+
+# Composer
+vendor/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
