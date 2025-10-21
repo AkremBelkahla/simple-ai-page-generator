@@ -1,6 +1,6 @@
 # 🤖 Simple AI Page Generator
 
-A professional WordPress plugin to generate high-quality content using various AI APIs (OpenAI, DeepSeek, Google Gemini, Claude).
+A professional WordPress plugin to generate high-quality content using AI. Currently supports **DeepSeek** with more AI models coming soon (OpenAI GPT, Google Gemini, Claude, Grok).
 
 [![WordPress](https://img.shields.io/badge/WordPress-5.8%2B-blue.svg)](https://wordpress.org/)
 [![PHP](https://img.shields.io/badge/PHP-7.4%2B-purple.svg)](https://php.net/)
@@ -10,7 +10,12 @@ A professional WordPress plugin to generate high-quality content using various A
 ## ✨ Features
 
 ### 🎨 Content Generation
-- **Multi-API Support** 🌐 : OpenAI, DeepSeek, Google Gemini, and Claude (Anthropic)
+- **AI Models** 🤖 :
+  - ✅ **DeepSeek** - Fully supported
+  - 🔜 **OpenAI GPT** - Coming soon
+  - 🔜 **Google Gemini** - Coming soon
+  - 🔜 **Claude (Anthropic)** - Coming soon
+  - 🔜 **Grok (xAI)** - Coming soon
 - **Customizable** ⚙️ : Choose word count (100 to 2000 words)
 - **Flexible** 📝 : Generate posts or pages
 - **Smart** 🧠 : Structured content with semantic HTML
@@ -60,12 +65,15 @@ wp plugin install simple-ai-page-generator --activate
 
 ### 1. Configure API Keys 🔑
 
-Go to **AI Generator > Settings** and add your API keys:
+Go to **AI Generator > Settings** and add your API key:
 
-- **OpenAI** 🤖 : [Get a key](https://platform.openai.com/api-keys)
-- **DeepSeek** 🔍 : [Get a key](https://platform.deepseek.com)
+- **DeepSeek** 🔍 : [Get a key](https://platform.deepseek.com) ✅ **Available now**
+
+**Coming Soon** 🔜 :
+- **OpenAI GPT** 🤖 : [Get a key](https://platform.openai.com/api-keys)
 - **Google Gemini** 💎 : [Get a key](https://ai.google.dev)
 - **Claude (Anthropic)** 🎭 : [Get a key](https://console.anthropic.com)
+- **Grok (xAI)** ⚡ : [Get a key](https://x.ai)
 
 ### 2. Default Settings 📝
 
@@ -97,7 +105,7 @@ $generator = $plugin->get_content_generator();
 // Generate and create a post
 $post_id = $generator->generate_and_create_post(
     'My Title',       // Title
-    'openai',         // Model
+    'deepseek',       // Model (currently only DeepSeek is available)
     500,              // Word count
     'post',           // Content type
     'draft'           // Status
@@ -276,6 +284,23 @@ See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 - ⚡ Optimized performance
 - 🐛 Bug fixes
 
+## 📦 Version Management
+
+This plugin uses automated version management scripts. See [VERSION_MANAGEMENT.md](VERSION_MANAGEMENT.md) for details.
+
+### Quick Commands
+
+```bash
+# Add changelog entry
+php bin/changelog.php fixed "Bug description"
+
+# Update version
+php bin/update-version.php 2.0.1 "Release summary"
+
+# Complete release
+php bin/release.php 2.1.0 minor
+```
+
 ## 🤝 Contributing
 
 Contributions are welcome! 🎉
@@ -301,11 +326,9 @@ GPL v2 or later - see [LICENSE](LICENSE)
 
 ## 🙏 Acknowledgments
 
-- 🤖 OpenAI for GPT
-- 🔍 DeepSeek for their API
-- 💎 Google for Gemini
-- 🎭 Anthropic for Claude
-- 🌍 WordPress community
+- 🔍 **DeepSeek** for their powerful AI API
+- 🌍 **WordPress community** for continuous support
+- 🔜 **Coming soon**: OpenAI, Google Gemini, Anthropic Claude, and xAI Grok integrations
 
 ## 📞 Support
 
